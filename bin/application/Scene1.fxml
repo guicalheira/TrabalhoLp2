@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene1Controller">
+   <children>
+      <Label layoutX="2.0" layoutY="28.0" prefHeight="31.0" prefWidth="280.0" text="ADICIONAR DISCENTE" AnchorPane.leftAnchor="2.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="73.0" text="Número de matrícula :" />
+      <TextField fx:id="tfNumeroMatricula" layoutX="14.0" layoutY="103.0" prefHeight="26.0" prefWidth="184.0" />
+      <Label layoutX="14.0" layoutY="141.0" prefHeight="18.0" prefWidth="61.0" text="Nome :" />
+      <TextField fx:id="tfNomeDiscente" layoutX="14.0" layoutY="166.0" prefHeight="26.0" prefWidth="184.0" />
+      <Label layoutX="14.0" layoutY="209.0" prefHeight="18.0" prefWidth="61.0" text="Curso :" />
+      <Button fx:id="addButton" layoutX="190.0" layoutY="360.0" mnemonicParsing="false" onAction="#ClicouAdicionar" prefHeight="18.0" prefWidth="74.0" text="Adicionar" />
+      <ChoiceBox fx:id="cbCursos" layoutX="14.0" layoutY="269.0" prefWidth="150.0" />
+      <MenuBar layoutX="-4.0" layoutY="-3.0" prefHeight="31.0" prefWidth="286.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Páginas">
+            <items>
+              <MenuItem fx:id="irTelaAddDiscente" mnemonicParsing="false" onAction="#ClicouAddDiscente" text="Adicionar discente" />
+                  <MenuItem fx:id="irNovoReq" mnemonicParsing="false" onAction="#ClicouNovoReq" text="Novo requerimento" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
