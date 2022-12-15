@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 public class Requerimento {
 		String numeroProtocolo;
 		int numeroMatricula;
-		int data;
+		Date data;
 		String tipoSolicitacao;
 		String observacao;
 		String status;
 
-		public Requerimento(String numeroProtocolo, int numeroMatricula, String tipoSolicitacao, int data, String observacao, String status) {
-	    this.numeroProtocolo = numeroProtocolo;
+		public Requerimento(String numeroProtocolo, int numeroMatricula, Date data,String tipoSolicitacao, String observacao, String status) {
+	        this.numeroProtocolo = numeroProtocolo;
 			this.numeroMatricula = numeroMatricula;
 			this.data = data;
 			this.tipoSolicitacao = tipoSolicitacao;
@@ -22,10 +22,7 @@ public class Requerimento {
 		}
 
 	
-		public Requerimento(TextField tfNumeroMatricula, String tipoSolicitacao2, TextField tfData,
-				TextField tfObservacao) {
-			// TODO Auto-generated constructor stub
-		}
+		
 
 
 		public static String geraNumeroProtocolo() {
@@ -64,11 +61,11 @@ public class Requerimento {
 			this.numeroMatricula = numeroMatricula;
 		}
 
-		public int getData() {
+		public Date getData() {
 			return data;
 		}
 
-		public void setData(int data) {
+		public void setData(Date data) {
 			this.data = data;
 		}
 

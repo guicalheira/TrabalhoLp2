@@ -18,7 +18,7 @@ public class Scene1Controller extends MenuBarController implements Initializable
 	private TextField tfNumeroMatricula, tfNomeDiscente;
 	@FXML
 	private ChoiceBox <String> cbCursos;
-	private String[] cursos = {"Engenharia Ambiental","Engenharia Civil","Engenharia Elétrica","Química","Sistemas de Informação"};
+	private final String[] cursos = {"Engenharia Ambiental","Engenharia Civil","Engenharia Elétrica","Química","Sistemas de Informação"};
 	@FXML
 	private Button addButton;
 
@@ -36,12 +36,13 @@ public class Scene1Controller extends MenuBarController implements Initializable
 	public void ClicouAdicionar(ActionEvent event) {
 		
 		
-		int numeroMatriucla = Integer.parseInt(tfNumeroMatricula.getText());
+		int numeroMatricula = Integer.parseInt(tfNumeroMatricula.getText());
 		String nomeDiscente = tfNomeDiscente.getText(); 
-		String cursoDiscente = cbCursos.getAccessibleText();
+		String cursoDiscente = cbCursos.getValue();
+	
 		
 		
-		Discente discente = new Discente(numeroMatriucla, nomeDiscente, cursoDiscente);
+		Discente discente = new Discente(numeroMatricula, nomeDiscente, cursoDiscente);
 	
 		Main.repositorio.adicionar(discente);
 		
@@ -58,6 +59,7 @@ public class Scene1Controller extends MenuBarController implements Initializable
 		tfNomeDiscente.setText("");
 
 		System.out.println("clicou botao adicionar discente");
+		System.out.println(numeroMatricula+ " " +nomeDiscente+" "+ cursoDiscente);
 	}
 	
 }
