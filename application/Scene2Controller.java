@@ -4,18 +4,16 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import classes.Discente;
 import classes.Requerimento;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class Scene2Controller extends MenuBarController implements Initializable{    
 
@@ -25,9 +23,10 @@ public class Scene2Controller extends MenuBarController implements Initializable
 			"Histórico Acadêmico","Matrícula em Estágio","Revisão de Avaliação","Segunda Chamada de Avaliação",
 			"Trancamento de Curso","Trancamento de Disciplina"};
 	@FXML
-	private TextArea tfObservacao;
+	private TextArea taObservacao;
 	@FXML
 	private TextField  tfNumeroMatricula;
+	
 	
 	
 	@Override
@@ -35,21 +34,28 @@ public class Scene2Controller extends MenuBarController implements Initializable
 		
 		cbReq.getItems().addAll(requerimentos);	
 		
+		
 	}
+	
+
+	
 	public void getReq(ActionEvent event) {
 		String numeroProtocolo = Requerimento.geraNumeroProtocolo();
 		int numeroMatricula = Integer.parseInt(tfNumeroMatricula.getText());
 		Date data = new Date();
 		String tipoSolicitacao = cbReq.getValue();
-		String observacao = tfObservacao.getText();
+		String observacao = taObservacao.getText();
 		String status = "Em aberto";
-	
+		
 		Requerimento requerimento = new Requerimento(numeroProtocolo,numeroMatricula,data,tipoSolicitacao , observacao,status);
+		
+		
+		
+		
 	
 		Main.repositorio.adicionar(requerimento);
-		
-		//for (Requerimento a : Main.repositorio.getRequerimentos())
-			//System.out.println(a.toString());
+		for (Requerimento a : Main.repositorio.getRequerimentos())
+			System.out.println(a.toString());
 		
 		Alert alertInserido = new Alert(Alert.AlertType.INFORMATION);
 		alertInserido.setTitle("Cadastro concluído com sucesso !");
@@ -58,10 +64,11 @@ public class Scene2Controller extends MenuBarController implements Initializable
 		alertInserido.showAndWait();
 		
 		//Limpando os campos
-		//tfNumeroMatricula.setText("");
-		//tfNomeDiscente.setText("");
+		 tfNumeroMatricula.setText("");
+		 taObservacao.setText("");
 
 		System.out.println("clicou botao adicionar requerimento");
+		System.out.println(numeroProtocolo+" "+numeroMatricula+data+" "+tipoSolicitacao+" "+observacao+" "+status);
 		
 		
 	}

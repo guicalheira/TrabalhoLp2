@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	static RepositorioArrays repositorio;
 	
-	private static Scene sceneScene1, sceneScene2;
+	private static Scene sceneScene1, sceneScene2,sceneScene3, sceneScene4;
 	private static Stage primaryStage;
 
 	@Override
@@ -20,6 +20,8 @@ public class Main extends Application {
 		try {
 			FXMLLoader Scene1 = new FXMLLoader(getClass().getResource("Scene1.fxml"));
 			FXMLLoader Scene2 = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+			FXMLLoader Scene3 = new FXMLLoader(getClass().getResource("Scene3.fxml"));
+			FXMLLoader Scene4 = new FXMLLoader(getClass().getResource("Scene4.fxml"));
 
 			primaryStage = stage;
 			stage.setTitle("Requerimentos");
@@ -29,10 +31,13 @@ public class Main extends Application {
 
 			Parent parentScene1 = Scene1.load();
 			Parent parentScene2 = Scene2.load();
+			Parent parentScene3 = Scene3.load();
+			Parent parentScene4 = Scene4.load();
 
 			sceneScene1 = new Scene(parentScene1);
 			sceneScene2 = new Scene(parentScene2);
-
+			sceneScene3 = new Scene(parentScene3);
+			sceneScene4 = new Scene(parentScene4);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 			primaryStage.setScene(sceneScene1);
@@ -56,6 +61,12 @@ public class Main extends Application {
 			break;
 		case 2:
 			primaryStage.setScene(sceneScene2);
+			break;
+		case 3:
+			primaryStage.setScene(sceneScene3);
+			break;
+		case 4:
+			primaryStage.setScene(sceneScene4);
 			break;
 		}
 	}

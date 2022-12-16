@@ -7,7 +7,6 @@ public class MenuBarController {
 	@FXML
 	protected void ClicouAddDiscente(ActionEvent event) {
 		Main.switchMudaTelas(1);
-
 	}
 
 	@FXML
@@ -15,8 +14,12 @@ public class MenuBarController {
 		Main.switchMudaTelas(2);
 	}
 	@FXML
-	protected void ClicouGerenciarRequerimentos(ActionEvent event) {
+	protected void ClicouAlterarStatus(ActionEvent event) {
 		Main.switchMudaTelas(3);
+	}
+	@FXML
+	protected void ClicouConsulta(ActionEvent event) {
+		Main.switchMudaTelas(4);
 	}
 }
 	

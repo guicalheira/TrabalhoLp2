@@ -30,6 +30,9 @@
             <items>
               <MenuItem fx:id="irTelaAddDiscente" mnemonicParsing="false" onAction="#ClicouAddDiscente" text="Adicionar discente" />
                   <MenuItem fx:id="irNovoReq" mnemonicParsing="false" onAction="#ClicouNovoReq" text="Novo requerimento" />
+                    <MenuItem fx:id="irAlterarStatus" mnemonicParsing="false" onAction="#ClicouAlterarStatus" text="Alterar Status" />
+                  <MenuItem fx:id="irAlterarStatus1" mnemonicParsing="false" onAction="#ClicouConsulta" text="Consultas" />
+                
             </items>
           </Menu>
         </menus>
